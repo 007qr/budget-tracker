@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install vercel cli
-        run: npm install --global vercel@latest
+        run: pnpm install --global vercel@latest
       - name: pull vercel enviornment information
         run: vercel pull --yes --env=preview --token=${{ secrets.VERCEL_TOKEN }}
       - name: build projects artifacts
