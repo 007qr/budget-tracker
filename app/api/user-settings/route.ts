@@ -1,9 +1,9 @@
-import { currentUser } from "@clerk/nextjs/server";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
-import prisma from "~/lib/prisma";
+import { currentUser } from '@clerk/nextjs/server';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import prisma from '~/lib/prisma';
 
-export async function GET(request: Request) {
+export async function GET() {
     const user = await currentUser();
 
     if (!user) {
@@ -20,9 +20,9 @@ export async function GET(request: Request) {
         userSettings = await prisma.userSettings.create({
             data: {
                 userId: user.id,
-                currency: "INR",
-            }
-        })
+                currency: 'INR',
+            },
+        });
     }
 
     // Revalidate the home page that uses the user currency
