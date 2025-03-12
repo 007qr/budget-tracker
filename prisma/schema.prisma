@@ -34,7 +34,7 @@ model Transaction {
   updatedAt DateTime @default(now())
 
   amount     Float
-  decription String
+  description String
   date       DateTime
   userId     String
   type       String   @default("income")

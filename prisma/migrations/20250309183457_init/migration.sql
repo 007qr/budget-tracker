@@ -19,7 +19,7 @@ CREATE TABLE "Transaction" (
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "amount" REAL NOT NULL,
-    "decription" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
     "date" DATETIME NOT NULL,
     "userId" TEXT NOT NULL,
     "type" TEXT NOT NULL DEFAULT 'income',
